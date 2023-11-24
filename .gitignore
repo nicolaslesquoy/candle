@@ -158,7 +158,7 @@ celerybeat.pid
 
 # Environments
 .env
-.venv
+.venv/
 env/
 venv/
 ENV/
@@ -521,6 +521,6 @@ package.json
 # Built Visual Studio Code Extensions
 *.vsix
 
-## References & Misc.
+## MdBook
 
-references/
+book/
