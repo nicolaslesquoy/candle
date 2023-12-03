@@ -1,0 +1,69 @@
+\documentclass[10pt,a4paper]{article}
+% Standard packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{ccfonts} % Times font
+% Maths packages
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage[g]{esvect}
+\usepackage{esint} % For improved integral symbols
+\usepackage{esdiff}
+\usepackage{stmaryrd}
+% Graphics packages
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{pgfplots}
+% Misc packages
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    left=20mm,
+    right=20mm,
+    top=30mm,
+    bottom=30mm
+}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=red,
+  urlcolor=red,
+  citecolor=red
+}
+% Custom commands
+
+% Meta-data
+\title{Fully compressible reacting flow model for laminar and turbulent premixed flames}
+\author{Nicolas Lesquoy}
+\date{Last update: \today}
+% Document
+\begin{document}
+\maketitle
+\tableofcontents
+% ----------------------------------------------------------------
+\section{Introduction}
+\label{sec:introduction}
+% ----------------------------------------------------------------
+\section{Governing equations}
+\label{sec:governing_equations}
+\begin{equation}
+    \label{eq:governing_equations}
+    {
+        \renewcommand{\arraystretch}{2}\left\lbrace\begin{array}{l}
+            \dfrac{\partial \rho}{\partial t} + \dfrac{\partial \rho u_i}{\partial x_i} = 0 \\
+            \dfrac{\partial \rho u_i}{\partial t} + \dfrac{\partial \rho u_i u_j}{\partial x_j} = -\dfrac{\partial p}{\partial x_i} + \dfrac{\partial x_{ij}}{\partial x_j} + \rho f_i \\
+            \dfrac{\partial \rho Y_k}{\partial t} + \dfrac{\partial \rho u_j Y_k}{\partial x_j} = -\dfrac{\partial \mathcal{J}_{k,j}}{\partial x_j} + \dot{\omega}_k \\
+            \dfrac{\partial \rho h_s}{\partial t} + \dfrac{\partial \rho u_j h_s}{\partial x_j} + \dfrac{\partial \rho \mathcal{K}}{\partial t} + \dfrac{\partial \rho u_j \mathcal{K}}{\partial x_j} = -\dfrac{\partial q_j}{\partial x_j} + \dfrac{\partial p}{\partial t} + \rho u_i f_i + q_\mathrm{rad} - \displaystyle\sum_{l=1}^{N}\dot{\omega}_l \Delta h_{f,l}^\circ + \dfrac{\partial \tau_{ij} u_i}{\partial x_j} \\
+            p = \rho R_u T \displaystyle\sum_{l=1}^{N} \dfrac{Y_l}{W_l} \\
+        \end{array}\right.
+    }
+\end{equation}
+% ----------------------------------------------------------------
+\end{document}

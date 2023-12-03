@@ -507,7 +507,6 @@ package-lock.json
 package.json
 
 ## VSCode
-
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -522,5 +521,8 @@ package.json
 *.vsix
 
 ## MdBook
-
 book/
+
+## GMSH
+*.msh
+
